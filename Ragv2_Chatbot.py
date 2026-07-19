@@ -26,6 +26,8 @@ Crisis_phrases = (
     "self harm",
     "hurt myself",
     "harm myself",
+    "Kill me",
+    "killing me"
 )
 
 Crisis_response = """
