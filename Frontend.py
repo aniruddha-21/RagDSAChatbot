@@ -15,7 +15,7 @@ st.set_page_config(
     page_icon="📚",
     layout="centered",
 )
-
+DETAILS_LABEL = "Show all details"
 
 @st.cache_resource
 def load_pipeline():
@@ -70,7 +70,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
         
         if message.get("sources") or message.get("judge_result"):
-            with st.expander("Sources and reranking scores"):
+            with st.expander(DETAILS_LABEL):
                 for source in message.get("sources", []):
                     st.write(f"- {source}")
 
@@ -127,7 +127,7 @@ if question:
         st.markdown(answer)
 
         if sources or judge_result:
-            with st.expander("Show all details"):
+            with st.expander(DETAILS_LABEL):
                 print("Sources: ")
                 for source in sources:
                     st.write(f"- {source}")
